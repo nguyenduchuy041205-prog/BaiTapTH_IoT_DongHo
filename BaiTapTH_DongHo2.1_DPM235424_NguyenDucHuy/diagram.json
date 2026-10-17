@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "dong-ho-mqtt-publisher",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -41.4, "left": -304.4, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -38.4,
+      "left": 91.24,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot_gio", "top": -164.5, "left": -86.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_phut", "top": -164.5, "left": -173, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_giay",
+      "top": -164.5,
+      "left": -259.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot_giay:GND", "bb1:tn.5", "black", [ "v0" ] ],
+    [ "pot_giay:VCC", "bb1:tp.6", "red", [ "v0" ] ],
+    [ "pot_phut:GND", "bb1:tn.12", "black", [ "v0" ] ],
+    [ "pot_phut:VCC", "bb1:tp.14", "red", [ "v0" ] ],
+    [ "pot_gio:GND", "bb1:tn.20", "black", [ "v0" ] ],
+    [ "pot_gio:VCC", "bb1:tp.21", "red", [ "v0" ] ],
+    [ "esp:32", "bb1:7t.e", "purple", [ "h0" ] ],
+    [ "esp:35", "bb1:16t.d", "blue", [ "h0" ] ],
+    [ "esp:34", "bb1:25t.c", "green", [ "h0" ] ],
+    [ "pot_giay:SIG", "bb1:7t.a", "purple", [ "v0" ] ],
+    [ "pot_phut:SIG", "bb1:16t.a", "blue", [ "v0" ] ],
+    [ "pot_gio:SIG", "bb1:25t.a", "green", [ "v0" ] ],
+    [ "esp:3V3", "bb1:tp.25", "red", [ "h0.15", "v-28.8" ] ],
+    [ "esp:GND.1", "bb1:tn.25", "black", [ "h9.75", "v-115.2", "h-19.2", "v-19.2" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "author": "dong-ho-mqtt-subscriber",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": 102.6, "left": -477.2, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 86.4,
+      "left": 264.04,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "sv_giay_b",
+      "top": -77.8,
+      "left": 40.2,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "sv_giay_a",
+      "top": -77.8,
+      "left": -46.2,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "sv_phut_b",
+      "top": -77.8,
+      "left": -190.2,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "sv_phut_a",
+      "top": -77.8,
+      "left": -276.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "sv_gio_b",
+      "top": -77.8,
+      "left": -420.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "sv_gio_a",
+      "top": -77.8,
+      "left": -507,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:5V", "bb1:bp.50", "red", [ "h-143.85", "v0.9" ] ],
+    [ "esp:GND.1", "bb1:bn.50", "black", [ "h9.75", "v57.6", "h-153.6", "v1.3" ] ],
+    [ "sv_gio_a:GND", "bb1:tn.1", "black", [ "v0" ] ],
+    [ "sv_gio_a:V+", "bb1:tp.2", "red", [ "v0" ] ],
+    [ "sv_gio_b:GND", "bb1:tn.9", "black", [ "v0" ] ],
+    [ "sv_gio_b:V+", "bb1:tp.10", "red", [ "v0" ] ],
+    [ "sv_phut_a:GND", "bb1:tn.21", "black", [ "v0" ] ],
+    [ "sv_phut_a:V+", "bb1:tp.22", "red", [ "v0" ] ],
+    [ "sv_phut_b:GND", "bb1:tn.29", "black", [ "v0" ] ],
+    [ "sv_phut_b:V+", "bb1:tp.30", "red", [ "v0" ] ],
+    [ "sv_giay_a:GND", "bb1:tn.41", "black", [ "v0" ] ],
+    [ "sv_giay_a:V+", "bb1:tp.42", "red", [ "v0" ] ],
+    [ "sv_giay_b:GND", "bb1:tn.49", "black", [ "v0" ] ],
+    [ "sv_giay_b:V+", "bb1:tp.50", "red", [ "v0" ] ],
+    [ "esp:13", "bb1:5b.i", "green", [ "h0" ] ],
+    [ "sv_gio_a:PWM", "bb1:5t.a", "green", [ "v0" ] ],
+    [ "bb1:5t.e", "bb1:5b.f", "green", [ "v0" ] ],
+    [ "esp:12", "bb1:14b.g", "gold", [ "v0" ] ],
+    [ "sv_gio_b:PWM", "bb1:14t.a", "gold", [ "v0" ] ],
+    [ "bb1:14t.e", "bb1:14b.f", "gold", [ "v0" ] ],
+    [ "esp:14", "bb1:29t.e", "magenta", [ "h0" ] ],
+    [ "sv_phut_a:PWM", "bb1:29t.a", "magenta", [ "v0" ] ],
+    [ "sv_phut_b:PWM", "bb1:38t.a", "cyan", [ "v0" ] ],
+    [ "esp:27", "bb1:38t.e", "cyan", [ "h0" ] ],
+    [ "sv_giay_a:PWM", "bb1:53t.a", "yellow", [ "v0" ] ],
+    [ "esp:26", "bb1:53t.e", "yellow", [ "h0" ] ],
+    [ "sv_giay_b:PWM", "bb1:62t.a", "orange", [ "v0" ] ],
+    [ "esp:25", "bb1:62t.e", "orange", [ "v0" ] ],
+    [ "bb1:bn.16", "bb1:21b.j", "black", [ "v0" ] ],
+    [ "bb1:bp.17", "bb1:22b.j", "red", [ "v0" ] ],
+    [ "bb1:21b.f", "bb1:21t.e", "black", [ "v0" ] ],
+    [ "bb1:22b.f", "bb1:22t.e", "red", [ "v0" ] ],
+    [ "bb1:21t.a", "bb1:tn.16", "black", [ "v0" ] ],
+    [ "bb1:22t.a", "bb1:tp.17", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
